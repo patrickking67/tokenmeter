@@ -7,7 +7,7 @@ TokenMeter (repo `tokenmeter`) shows AI coding plan limits for Claude, Codex, Gi
 - macOS: Swift 5 and SwiftUI, macOS 14+, WidgetKit. `apps/macos/project.yml` is the XcodeGen source; the `.xcodeproj` is generated and gitignored.
 - Windows: PowerShell 5.1 or 7 and WPF. No modules, no build step.
 - Plugin: Python 3, standard library only, plus small shell scripts.
-- Static page: one hand-written `docs/index.html`, not published anywhere.
+- Static page: one hand-written `docs/index.html`, published with GitHub Pages by `.github/workflows/pages.yml`.
 
 ## Layout
 
@@ -68,7 +68,7 @@ Tools: `brew install xcodegen shellcheck actionlint powershell`, plus Xcode. Lin
 1. Branch from `main`, make one logical change per commit.
 2. `scripts/check.sh` passes.
 3. Update `CHANGELOG.md` and, for a board change, `spec/board.md`.
-4. Open a PR. Nothing deploys; a merge to `main` reaches plugin users on their next update.
+4. Open a PR. A merge that changes `docs/` redeploys the Pages site; nothing else deploys. A merge to `main` reaches plugin users on their next update.
 
 ## Definition of done
 

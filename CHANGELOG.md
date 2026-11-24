@@ -7,6 +7,7 @@ All notable changes to this project are documented here. The format follows
 ## [Unreleased]
 
 ### Added
+- **GitHub Pages site.** `docs/` deploys to <https://patrickking67.github.io/tokenmeter/> through `.github/workflows/pages.yml`. The page gets a canonical URL and an absolute Open Graph image so link previews work.
 - **Signed, notarized macOS download.** `scripts/release-macos.sh` archives, signs with Developer ID, notarizes, staples and packages a DMG, a zip and `SHA256SUMS` in `dist/`. `.github/workflows/release.yml` does the same on a `v*` tag in a reviewer-gated `release` environment, attests build provenance and publishes the GitHub release. The README covers downloading and verifying it.
 - **App icon**: the two rings from the menu bar on a dark tile, with gradient arcs, drawn by `apps/macos/App/IconArt.swift` (`scripts/make-icon.sh` writes the icon set).
 - **Shortcuts, Spotlight and Siri**: Get AI Usage, Set Keep Awake and Open TokenMeter Dashboard, with suggested phrases.

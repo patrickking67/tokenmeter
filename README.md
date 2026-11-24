@@ -18,7 +18,7 @@
 - **Shortcuts and Spotlight.** Ask for usage, set Keep Awake or open the dashboard from Shortcuts, Spotlight or Siri.
 - **VoiceOver.** Each meter, ring and the menu bar label read as one sentence: percent used, when it resets and the pace.
 
-There is no hosted site. [`docs/index.html`](docs/index.html) is a static page you can preview locally (see [Preview the page](#preview-the-page)).
+Site: <https://patrickking67.github.io/tokenmeter/>. The page is [`docs/index.html`](docs/index.html); preview it locally with [Preview the page](#preview-the-page).
 
 ## Lanes
 
@@ -131,7 +131,7 @@ apps/windows    PowerShell + WPF tray app and desktop widget, core tests
 plugin/         Claude Code plugin: board.py, skills, commands, hook
 extras/         Claude Code status line
 spec/           board.json contract, provider research, fixtures
-docs/           Static product page (not published)
+docs/           Static product page, published with GitHub Pages
 scripts/        check.sh, the one check command
 ```
 
@@ -156,7 +156,7 @@ Then open <http://127.0.0.1:4116/>. The same server is configured in `.claude/la
 
 ## Deploy
 
-CI builds and tests on every push and pull request. Pushing a `v*` tag that matches `MARKETING_VERSION` in `apps/macos/project.yml` runs `.github/workflows/release.yml`, which builds, signs with Developer ID, notarizes, staples, attests and publishes the DMG, zip and `SHA256SUMS` as a GitHub release. It runs in the `release` environment, so a required reviewer approves each run. To cut the same release by hand on a Mac with the certificate and a notary profile, run `scripts/release-macos.sh` (see the header of that script for the one-time setup). The Windows app is installed from source. Plugin users install from `main` with `/plugin marketplace add`, so a merge to `main` reaches them on their next plugin update.
+CI builds and tests on every push and pull request. Pushing a `v*` tag that matches `MARKETING_VERSION` in `apps/macos/project.yml` runs `.github/workflows/release.yml`, which builds, signs with Developer ID, notarizes, staples, attests and publishes the DMG, zip and `SHA256SUMS` as a GitHub release. It runs in the `release` environment, so a required reviewer approves each run. To cut the same release by hand on a Mac with the certificate and a notary profile, run `scripts/release-macos.sh` (see the header of that script for the one-time setup). The Windows app is installed from source. The site in `docs/` deploys to GitHub Pages from `.github/workflows/pages.yml` when `docs/` changes on `main`. Plugin users install from `main` with `/plugin marketplace add`, so a merge to `main` reaches them on their next plugin update.
 
 ## License
 

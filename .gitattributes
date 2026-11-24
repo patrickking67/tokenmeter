@@ -5,3 +5,6 @@
 *.icns binary
 *.ico binary
 *.pdf binary
+
+# The product page is documentation, not source.
+docs/** linguist-documentation=true
